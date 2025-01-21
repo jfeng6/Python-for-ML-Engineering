@@ -23,7 +23,7 @@ def load_headlines(file_path):
         with open(file_path, "r", encoding="utf-8") as file:
             headlines = [line.strip() for line in file if line.strip()]
         return headlines
-    except (FileNotFoundError, IOError) as error_message:  
+    except (FileNotFoundError, IOError) as error_message:
         print(f"Error: {error_message}")
         sys.exit(1)
 
@@ -90,4 +90,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
