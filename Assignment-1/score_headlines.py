@@ -9,9 +9,8 @@ Analyzes headlines and classifies them as Optimistic, Pessimistic, or Neutral.
 """
 
 import sys
-import os
-import joblib
-import datetime
+import datetime  # Standard library
+import joblib  # Third-party
 from sentence_transformers import SentenceTransformer
 
 
@@ -24,10 +23,7 @@ def load_headlines(file_path):
         with open(file_path, "r", encoding="utf-8") as file:
             headlines = [line.strip() for line in file if line.strip()]
         return headlines
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' was not found.")
-        sys.exit(1)
-    except Exception as error_message:  
+    except (FileNotFoundError, IOError) as error_message:  
         print(f"Error: {error_message}")
         sys.exit(1)
 
