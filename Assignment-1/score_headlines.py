@@ -3,6 +3,10 @@
 
 # In[ ]:
 
+"""
+Score Headlines - Sentiment Analysis Script
+Analyzes headlines and classifies them as Optimistic, Pessimistic, or Neutral.
+"""
 
 import sys
 import os
@@ -23,8 +27,8 @@ def load_headlines(file_path):
     except FileNotFoundError:
         print(f"Error: The file '{file_path}' was not found.")
         sys.exit(1)
-    except Exception as e:
-        print(f"Error: {e}")
+    except Exception as error_message:  
+        print(f"Error: {error_message}")
         sys.exit(1)
 
 
