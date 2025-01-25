@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        require_serial: true
+        args:
+          [
+            "-rn",  # Only display messages
+            "-sn",  # Don't display the score
+          ]
+  - repo: https://github.com/psf/black
+    rev: 23.1.0  # Use the latest stable version
+    hooks:
+      - id: black
